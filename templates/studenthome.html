@@ -1,12 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student home</title>
+    <link rel="stylesheet" href="{% static 'css/table.css' %}"/>
 </head>
 <body>
     <h1>Welcome {{student}}</h1>
-    
+    <div id="wrapper">
+    <h1>Your Teachers</h1> 
+    <table id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th><span>Teacher Name</span></th>
+        <th><span>Teacher Subject</span></th>
+        <th><span>Teacher Email</span></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for teacher in teachers %}
+      <tr>
+        <td>{{teacher.teacher_name}}</td>
+        <td>{{teacher.teacher_subject}}</td>
+        <td>{{teacher.teacher_email}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+ </div>
 </body>
 </html>

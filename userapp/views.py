@@ -106,10 +106,11 @@ def studentlogin(request):
         password = request.POST.get('password')
         student = Student.objects.filter(student_name=name, student_password=password)
         if student:
+            staff = Teacher.objects.all()
             for data in student:
                 request.session['idn']=data.id
                 username=data.student_name
-            return render(request, 'studenthome.html',{'student':username})
+            return render(request, 'studenthome.html',{'student':username, 'teachers':staff})
         else:
             return render(request, 'student_login.html', {'message':'Invalid Username or password'})
     return render(request, 'student_login.html')
