@@ -15,5 +15,5 @@ The admin username is set by default to 'admin' and the password to 'admin12345'
 but ofcourse if you want to create a new record to the admin database, you can always create a new superuser and an admin record.
 
 # limitation
-The Admin is the only one with the capabiliy to add new students, so the student details must be provided by the admin or student.
+The Admin is the only one with the capabiliy to add new students, so the student details must be provided by the admin or known by the student.
 
