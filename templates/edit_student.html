@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="{% static 'css/table.css' %}"/>
+</head>
+<body>
+    <div id="wrapper">
+    <h1>Student's Details</h1> 
+    <table id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th><span>Student ID</span></th>
+            <th><span>Student Name</span></th>
+            <th><span>Student Email</span></th>
+            <th><span>Student Phone</span></th>
+            <th><span>Student Address</span></th>
+            <th><span>Action</span></th>
+        </tr>
+    </thead>
+    <tbody>
+      <form method="post">
+        {% csrf_token %}
+      {% for data in student %}
+        <tr>
+            <td><input type="text" value="{{data.student_id}}" name="idn" required></td>
+            <td><input type="text" value="{{data.student_name}}" name="name" required></td>
+            <td><input type="email" value="{{data.student_email}}" name="email" required></td>
+            <td><input type="number" value="{{data.student_phone}}" name="phone" required></td>
+            <td><textarea name="address" required> {{data.student_address}}</textarea></td>
+            <td><button>Update</button></td>
+            <td><input type="text" value="{{data.id}}" name="id" hidden></td>
+        </tr>
+      {% endfor %}
+      </form>
+    </tbody>
+  </table>
+  </div>
+</body>
+</html>

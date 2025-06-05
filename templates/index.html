@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the School Management System</h1>
+    </header>
+    <div class="container"> 
+        <h2>Select your role to proceed:</h2>
+        <div class="container2">
+            <a href="{% url 'adminlogin' %}">
+                <div class="circle">
+                    <h1>Admin</h1>
+                </div>
+            </a>
+            <a href="{% url 'studentlogin' %}">
+                <div class="circle">
+                    <h1>Student</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/admin_home.css' %}">
+
+<header>
+        <nav>
+            <h1 class="ad">Admin Dashboard</h1>
+            <ul>
+                <li><a class="admin_anchor" href="{% url 'adminhome' %}">Home</a></li>                
+                <li><a class="admin_anchor" href="{% url 'studentsdetails' %}">View Students</a></li>
+                <li><a class="admin_anchor" href="{% url 'addstudent' %}">Add Student</a></li>
+                <li><a class="admin_anchor" href="{% url 'teachersdetails' %}">View Teachers</a></li>
+                <li><a class="admin_anchor" href="{% url 'addteacher' %}">Add Teacher</a></li>
+                <li><a class="admin_anchor" href="/logout/">Logout</a></li>
+            </ul>
+        </nav>
+    </header>

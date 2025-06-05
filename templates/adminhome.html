@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+</head>
+<body>
+    {% include 'adminheader.html' %}
+    <h1 class="home">Welcome to the Admin Dashboard</h1>
+    <div class="container">
+        <div class="card">
+            <h2>Manage Students</h2>
+            <ul>
+                <li><a href="{% url 'studentsdetails' %}">View Students</a></li>
+                <li><a href="{% url 'addstudent' %}">Add Student</a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Manage Teachers</h2>
+            <ul>
+                <li><a href="{% url 'teachersdetails' %}">View Teachers</a></li>
+                <li><a href="{% url 'addteacher' %}">Add Teacher</a></li>
+            </ul>
+        </div>
+</body>
+</html>
